@@ -34,8 +34,8 @@ public class ToDoController {
         return service.postNewToDo(toDoDto);
     }
 
-    @PutMapping("{id}")
-    public ToDo editToDo(@PathVariable String id, @RequestBody ToDo toDoDetails){
+    @PutMapping("{toDoid}")
+    public ToDo editToDo(@PathVariable String toDoid, @RequestBody ToDo toDoDetails){
         return service.editToDo(toDoDetails);
     }
 
