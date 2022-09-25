@@ -9,7 +9,7 @@ type ToDoTableProps = {
 export default function ToDoTable (props: ToDoTableProps){
 
     return(
-        <div>
+        <div className={"cards"}>
             {props.toDos.map(
             (toDo)=>{
                 if(toDo.description.toLowerCase().includes(props.filterToDo.toLowerCase())){
