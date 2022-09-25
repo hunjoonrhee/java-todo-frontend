@@ -39,4 +39,19 @@ public class ToDoRepo {
     public ToDo deleteToDo(String id) {
         return toDos.remove(id);
     }
+
+    public ToDo setToDoDone(String id) {
+        toDos.get(id).setStatus("DONE");
+        return toDos.get(id);
+    }
+
+    public List<ToDo> getOnlyDone() {
+        ArrayList<ToDo> doneToDos = new ArrayList<>();
+        for(ToDo toDo :toDos.values()){
+            if(toDo.getStatus().equals("DONE")){
+                doneToDos.add(toDo);
+            }
+        }
+        return doneToDos;
+    }
 }
