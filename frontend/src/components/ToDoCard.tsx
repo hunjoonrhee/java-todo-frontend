@@ -1,9 +1,8 @@
 import {ToDo, TODO_STATUS} from "../model/ToDo";
 import "./ToDoCard.css"
 import axios from "axios";
-import {ChangeEvent, useEffect, useState} from "react";
-import {Route, useNavigate} from "react-router-dom";
-import {createBrotliDecompress} from "zlib";
+import {useState} from "react";
+
 
 
 type ToDoCardProps = {
@@ -55,15 +54,15 @@ export default function ToDoCard (props: ToDoCardProps){
     return(
         <div className={"card"}>
 
-                    <input className={"cb-done"} type="checkbox" onChange={(event)=>setIsChecked(event.target.checked)}
-                           onClick={()=>changeToDo2Done(props.ToDoCard.description, props.ToDoCard.id)}/>
+            <input className={"cb-done"} type="checkbox" name={"Search:"} placeholder={"Search"}
+                   onChange={(event)=>setIsChecked(event.target.checked)}
+                   onClick={()=>changeToDo2Done(props.ToDoCard.description, props.ToDoCard.id)}/>
 
-                    <h3 id={props.ToDoCard.id}>To-Do: {props.ToDoCard.description}</h3>
+            <h3 id={props.ToDoCard.id}>To-Do: {props.ToDoCard.description}</h3>
 
-
-                <span>
-                    <button className={"del-btn"} onClick={()=>deleteToDo(props.ToDoCard.id)}>Delete</button>
-                </span>
+            <span>
+                <button className={"del-btn"} onClick={()=>deleteToDo(props.ToDoCard.id)}>Delete</button>
+            </span>
                 {/*<p>Status: {props.ToDoCard.status}</p>*/}
 
 
