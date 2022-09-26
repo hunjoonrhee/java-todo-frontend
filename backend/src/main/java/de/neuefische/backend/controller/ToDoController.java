@@ -44,5 +44,10 @@ public class ToDoController {
        return service.deleteToDo(id);
     }
 
+    @GetMapping("/done")
+    public List<ToDo> getOnlyDone(){
+        return service.getOnlyDone();
+    }
+
 
 }

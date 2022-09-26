@@ -53,4 +53,8 @@ public class ToDoService {
     public ToDo deleteToDo(String id) {
         return toDoRepo.deleteToDo(id);
     }
+
+    public List<ToDo> getOnlyDone() {
+        return toDoRepo.getOnlyDone();
+    }
 }
